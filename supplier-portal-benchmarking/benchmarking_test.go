@@ -7,7 +7,6 @@ import (
 	"testing"
 )
 
-// Test calling api with 1 item
 func TestBring1ManipulateItem(t *testing.T) {
 	url := "http://localhost:8080/albums/1/1"
 	method := "GET"
@@ -44,7 +43,6 @@ func TestBring1NoManipulateItem(t *testing.T) {
 	fmt.Println(string(body))
 }
 
-
 func TestBring100Item(t *testing.T) {
 	url := "http://localhost:8080/albums/100/1"
 	method := "GET"
@@ -80,4 +78,3 @@ func TestBring1000Item(t *testing.T) {
 
 	fmt.Println(string(body))
 }
-

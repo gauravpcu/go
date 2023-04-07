@@ -11,9 +11,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func GetGoUsers(c *gin.Context) { // Get model if exist
+func GetGoUsers(c *gin.Context) {
 
-	//var GoUsers models.GoUsers
 	var usersFromDb []models.GoUsers
 	limit, nil := strconv.Atoi(c.Request.URL.Query().Get("limit"))
 	if err := models.DB.Limit(limit).Find(&usersFromDb).Error; err != nil {
@@ -23,8 +22,8 @@ func GetGoUsers(c *gin.Context) { // Get model if exist
 	c.JSON(http.StatusOK, usersFromDb)
 }
 
-func GoUsersAndManipulateThem(c *gin.Context) { // Get model if exist
-	//var GoUsers models.GoUsers
+func GoUsersAndManipulateThem(c *gin.Context) {
+
 	var usersFromDb []models.GoUsers
 	limit, nil := strconv.Atoi(c.Request.URL.Query().Get("limit"))
 	if err := models.DB.Limit(limit).Find(&usersFromDb).Error; err != nil {

@@ -11,8 +11,6 @@ var DB *gorm.DB
 
 func ConnectDatabase() {
 
-	//database, err := gorm.Open("mysql", "root:Procurement!2023@tcp(127.0.0.1:3306)/sp_test")
-
 	dsn := "root:Procurement!2023@tcp(127.0.0.1:3306)/sp_test?charset=utf8mb4&parseTime=True&loc=Local"
 	database, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 
