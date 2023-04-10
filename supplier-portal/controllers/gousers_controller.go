@@ -11,6 +11,10 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+func Home(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{"status": "All Good"})
+}
+
 func GetGoUsers(c *gin.Context) {
 
 	var usersFromDb []models.GoUsers

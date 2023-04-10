@@ -11,6 +11,7 @@ func main() {
 	r := gin.Default()
 	models.ConnectDatabase()
 
+	r.GET("/", controllers.Home)
 	r.GET("/api/user", controllers.GetGoUsers)
 	r.GET("/api/user/manipulated", controllers.GoUsersAndManipulateThem)
 	r.POST("/api/user", controllers.CreateGoUsers)
