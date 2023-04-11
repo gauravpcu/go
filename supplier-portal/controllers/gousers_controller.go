@@ -15,6 +15,10 @@ func Home(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"status": "All Good"})
 }
 
+func HomeError(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{"status": "Nothing Good"})
+}
+
 func GetGoUsers(c *gin.Context) {
 
 	var usersFromDb []models.GoUsers

@@ -9,13 +9,16 @@ import (
 
 func main() {
 	r := gin.Default()
-	models.ConnectDatabase()
+	res := models.ConnectDatabase()
 
-	r.GET("/", controllers.Home)
-	r.GET("/api/user", controllers.GetGoUsers)
-	r.GET("/api/user/manipulated", controllers.GoUsersAndManipulateThem)
-	r.POST("/api/user", controllers.CreateGoUsers)
-	r.PUT("/api/user", controllers.UpdateGoUsers)
-
+	if res == true {
+		r.GET("/", controllers.Home)
+		r.GET("/api/user", controllers.GetGoUsers)
+		r.GET("/api/user/manipulated", controllers.GoUsersAndManipulateThem)
+		r.POST("/api/user", controllers.CreateGoUsers)
+		r.PUT("/api/user", controllers.UpdateGoUsers)
+	} else {
+		r.GET("/", controllers.HomeError)
+	}
 	r.Run()
 }
